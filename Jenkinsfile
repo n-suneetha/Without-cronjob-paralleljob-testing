@@ -5,7 +5,7 @@ node {
        for (int i = 1; i <= 30; i++)
        {
            task["Task${i}"] = {
-            withCredentials([conjurSecretCredential(credentialsId: 'no-folder-pipeline-job-credential1', variable: 'CONJUR_SECRET')]) {
+            withCredentials([conjurSecretCredential(credentialsId: 'backup-credential', variable: 'CONJUR_SECRET')]) {
                  sh 'echo $CONJUR_SECRET |base64'
  
 }
